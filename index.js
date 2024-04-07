@@ -1,16 +1,24 @@
-function isPalindrome(word) {
+function isPalindrome(str) {
   // Write your algorithm here
+ str = str.toLowerCase();
+
+ let left = 0;
+  let right = str.length - 1;
+  
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  } 
+  return true;
 }
 
-/* 
-  Add your pseudocode here
-*/
+console.log(isPalindrome("madam"));  // Output: true
+console.log(isPalindrome("robot"));  // Output: false
 
-/*
-  Add written explanation of your solution here
-*/
 
-// You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
